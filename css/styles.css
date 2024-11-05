@@ -10,7 +10,7 @@ body {
 }
 h1 {
     font-size: 2em;
-    color: #0ae98a;
+    color: #f2ddcc;
     margin-bottom: 10px;
 }
 h2 {
@@ -38,3 +38,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+pre {
+    background-color: #1d2439;
+    color: #0ae98a;
+    padding: 25px;
+    border-radius: 15px;
+    overflow-x: auto;
+}
+
