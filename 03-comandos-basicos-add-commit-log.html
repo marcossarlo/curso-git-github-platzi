@@ -4,50 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Configuración Inicial de Git: init y config</title>
+    <title>Comandos Básicos de Git: add, commit y log</title>
 </head>
 <body>
-    <h1>Configuración Inicial de Git: init y config</h1>
-    <h3>Saber la versión de tu Git</h3>
+    <h1>Comandos Básicos de Git: add, commit y log</h1>
+    <code>https://platzi.com/home/clases/11059-gitgithub/71786-comandos-basicos-de-git-add-commit-log/</code>
+
     <pre>
         <code>
- git --versión
+            # iniciar un repositorio
+            git init
+
+            # agregarlo al área de staging
+            git add archivo.txt
+            git add .
+
+            # to unstage:
+            # Quita el archivo del staging, pero conserva los cambios en el working directory.
+            git restore --staged archivo.txt
+            # Deja de rastrear el archivo en Git, pero lo mantiene en el sistema de archivos.
+            git rm --cached archivo.txt
+            # Elimina el archivo del sistema de archivos y de Git.
+            git rm --force archivo.txt
+
+            # registrar los cambios en el repositorio
+            git commit -m "Mensaje del commit"
+            # modificar el mensaje del último commit
+            git commit --amend -m "Nuevo mensaje del commit"
+
+            # mostrar el historial de commits
+            git log
         </code>
     </pre>
-    <h3>Preparar el primer proyecto con Git</h3>
+    <h1>Flujo de trabajo en Git</h1>
     <pre>
         <code>
-mkdir curso-git-github-platzi
-cd curso-git-github-platzi/
-
-git init
-
-# Si prefieres la rama principal como “main”:
-    git config --global init.defaultBranch main.
-# Actualiza la rama en el proyecto actual
-    git branch -m main
-
-# Personalizar tu configuración:
-    git config --global user.name "MarcosSarLo"
-        git config --global user.email "msl.net@gmail.com"
-
-# revisar tu configuración:
-git config --list
-
-# recordar sintaxis de comandos:
-    git --help
-    git --help commit
-
+            <ol>
+                <li>Modificas archivos en el <strong>Working Directory</strong>.</li>
+                <li>Preparas los cambios en el <strong>Área de staging</strong>.</li>
+                <li>Haces commit de los cambios desde el staging al repositorio local.</li>
+                <li>Opcionalmente, haces push al repositorio remoto para compartir tus cambios.</li>
+            </ol>
         </code>
     </pre>
-    <p>Para empezar a trabajar con Git, primero debemos configurar nuestro nombre de usuario y correo electrónico. Esto es importante porque cada vez que hagamos un commit, esta información quedará registrada en el historial de cambios.</p>
-    <p>Para configurar nuestro nombre de usuario y correo electrónico, utilizamos los siguientes comandos:</p>
-    <pre>
-        <code>
-            git config --global user.name "Tu Nombre"
-            git config --global user.email "    
-        </code>
-    </pre>
-    
+  
 </body>
 </html>
