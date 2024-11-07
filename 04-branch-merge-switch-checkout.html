@@ -12,7 +12,41 @@
 
     <pre>
         <code>
+            # saber en que rama te encuentras
+            git branch
+             * main
+               rama-test
+
+            # Crear una rama sin cambiar de rama
+            git branch nombre-rama  
             
+            # Crear y cambiar a una nueva rama
+            git switch -c fixbranch
+
+            # Crear y cambiar a una nueva rama: Para compatibilidad con versiones antiguas de Git
+            git checkout -b nombre-rama 
+
+            # Fusionar cambios de una rama secundaria a la principal
+            # Desde la rama principal:
+            git merge nombre-rama
+
+            # Eliminar rama
+            git branch -d nombre-rama
+        </code>
+    </pre>
+    <h2>Consideraciones</h2>
+    <p>Se creó otra rama cuando en la rama principal se tenian cambios sin confirmar, hizo que la nueva rama herede esos cambios sin confirmar:</p>
+    <ul>
+        <li>Se confirmaron los cambios en la rama secundaria y los cambios quedan guardados solo en esa rama.</li>
+        <li>Pero la rama principal ahora está limpia y NO muestra cambios por confirmar</li>
+        <li>En la rama principal no se ven los cambios porque el directorio de trabajo está sincronizado con el último commit de la nueva rama. Esto ocurre porque el archivo en sí no tiene diferencias pendientes en el working tree.</li>
+        <li>Para evitar esto, se debe confirmar los cambios antes de crear una nueva rama.</li>              
+    </ul>
+    <pre>
+        <code>
+            # Añade solo los cambios en archivos rastreados, 
+            # incluidos los archivos eliminados y modificados.
+             git add -u # -u (update) 
         </code>
     </pre>
     
