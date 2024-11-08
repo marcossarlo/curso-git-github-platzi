@@ -35,3 +35,9 @@ $ git reset --hard HEAD~1
 - Sacar archivos del área de staging sin perder los cambios en el directorio de trabajo.
 - `--source <commit>`: Indica desde qué commit restaurar el archivo.
 - `--staged`git: Saca un archivo del área de staging.
+
+```bash
+# El archivo está en staggind area:
+git restore --staged 05-volviendo-en-el-tiempo.md
+# el archivo volverá al directorio de trabajo y saldrá del área de staging, por lo que no se incluirá en el próximo commit, pero los cambios no confirmados aún estarán presentes.
+```
