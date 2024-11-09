@@ -57,3 +57,39 @@ git ls-remote --tags origin
 - Usa ```git tag -a <tagname> <commit-id> -m "<mensaje>"``` para un tag anotado.
 - Usa ```git tag <tagname> <commit-id>``` para un tag ligero.
 - Usa ```git push origin <tagname>``` para enviar el tag al repositorio remoto.
+
+## GIT CHECKOUT: explorar commits anteriores, el historial de commits
+También permite revisar commits previos para explorar o probar cambios sin alterar la rama principal.
+
+En este caso se usa para explorar commits anteriores **cambiando temporalmente** tu working directory a un estado anterior en tu historial. Esto te permite ver cómo era tu proyecto en un commit específico sin alterar tu rama actual.
+
+Al usar git checkout, puedes regresar a un punto específico en el historial y evaluar cómo afectaban los cambios al proyecto en ese momento.
+
+```bash
+$ git branch branch-test
+# cambiar de rama
+
+$ git checkout f9dba1d
+# Esto cambia tu directorio de trabajo al estado del proyecto en ese commit.
+# Nota: Ahora estás en un estado detached HEAD, lo que significa que no estás en ninguna rama.
+# hará que se vea solo los archivos creados hasta ese commit, el resto desaparece 
+# Ningún cambio que hagas se reflejará en ninguna rama
+
+$ touch 01-01-test-checkout.md
+$ git add .
+$ git commit -m "Test checkout en hash-commit: f9dba1d"
+
+$ git status
+$ git log --oneline
+
+$ git checkout branch-test
+# regresar a tu rama anterior, al hacerlo, cualquier cambio hecho (tocuch, add, commit...), ya NO se verá
+# como si no se hibiera hecho nada
+# tener en cuenta que es bueno CONFIRMAR LOS CAMBIOS hechos en esa prueba, ya que si regresas a la rama
+# si creaste un archivo, se verá 
+
+$ git log --oneline
+```
+
+### Advertencia sobre detached HEAD
+Cuando usas git checkout para explorar un commit anterior, entras en un estado llamado **detached HEAD**. Esto significa que si realizas cambios y los confirmas (commit), esos cambios no estarán asociados a ninguna rama se perderán al regresar a la rama anterior.
