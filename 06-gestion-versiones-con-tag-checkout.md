@@ -93,3 +93,6 @@ $ git log --oneline
 
 ### Advertencia sobre detached HEAD
 Cuando usas git checkout para explorar un commit anterior, entras en un estado llamado **detached HEAD**. Esto significa que si realizas cambios y los confirmas (commit), esos cambios no estarán asociados a ninguna rama se perderán al regresar a la rama anterior.
+
+### ¿Cómo integran git tag y git checkout una experiencia de desarrollo ordenada?
+Ambos comandos permiten explorar y organizar sin interferir en el flujo principal del trabajo. Git tag marca versiones y puntos importantes, actuando como separadores en el historial, mientras que git checkout permite regresar a esos puntos y probar sin comprometer la rama actual. Esto proporciona una estructura en la que el equipo puede trabajar con libertad para realizar pruebas, versionar cambios y retornar al estado actual en cualquier momento sin temor a alterar el trabajo original.
