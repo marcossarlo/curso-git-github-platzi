@@ -87,3 +87,19 @@ Deshace los cambios de un commit específico creando un nuevo commit, sin modifi
 
 ### restore
 Administra el área de staging y el working directory sin tocar el historial de commits. Se usa para descartar o restaurar cambios locales no confirmados.
+
+## GIT RM --cached --force
+Para eliminar archivos del working directory (directorio de trabajo) y del repositorio Git (área de staging). Este comando es útil cuando deseas quitar un archivo tanto de tu proyecto local como de la versión almacenada en Git.
+
+- El archivo eliminado aparecerá como "deleted" en el próximo commit.
+- Eliminar archivos que ya no necesitas en tu proyecto y no quieres que aparezcan en futuros commits.
+- Limpiar tu historial eliminando archivos grandes o innecesarios que fueron añadidos por error.
+- Dejar de rastrear archivos pero mantenerlos localmente usando --cached.
+
+```bash
+$ git rm --cached config.json
+# Añade config.json al archivo .gitignore para que Git lo ignore en el futuro.
+
+$ git rm --force 05-volviendo-en-el-tiempo.html
+# Elimina el archivo de Git y del disco duro. 
+```
