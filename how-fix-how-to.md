@@ -1,5 +1,5 @@
 # How fix
-## Si cambiaste manualmente el nombre de un archivo
+## Si cambiaste manualmente el nombre de un archivo (rm, mv)
 ```bash
 # de file-01.md a myfiles-01.md
 
