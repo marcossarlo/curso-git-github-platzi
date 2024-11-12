@@ -1,5 +1,6 @@
 # How fix
 ## Si cambiaste manualmente el nombre de un archivo
+### con rm y mv
 ```bash
 # de file-01.md a myfiles-01.md
 
