@@ -22,3 +22,5 @@ git add -u
 git add myfiles-01.md
 git commit -m "Renombrado file-01.md a myfiles-01.md"
 ```
+## Como Abrir Editor GitHub.dev
+Estando en un repositorio de GitHub, presionar ```.``` 
